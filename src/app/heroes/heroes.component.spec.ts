@@ -1,16 +1,35 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
 
 import { HeroesComponent } from './heroes.component';
+import { Observable } from 'rxjs/Observable';
+import { HeroService } from '../hero.service';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
+  let heroService: HeroService;
+  let heroServiceStub: {};
+
   let fixture: ComponentFixture<HeroesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach((async() => {
+    heroServiceStub = {
+      getHeroes(): void {}
+    };
+
     TestBed.configureTestingModule({
-      declarations: [ HeroesComponent ]
+      declarations: [
+        HeroesComponent,
+        MockHeroDetailComponent,
+       ],
+       providers: [
+         {provide: HeroService, useValue: heroServiceStub}
+       ]
     })
     .compileComponents();
+
+    heroService = TestBed.get(HeroService);
+
   }));
 
   beforeEach(() => {
@@ -23,3 +42,12 @@ describe('HeroesComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+@Component({
+  selector: 'app-hero-detail',
+  template: ''
+})
+class MockHeroDetailComponent {
+  @Input() hero;
+}
