@@ -1,11 +1,23 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { HeroService } from './hero.service';
+import { MessageService } from './message.service';
 
 describe('HeroService', () => {
+  let messageServiceStub: {};
+
+
+
   beforeEach(() => {
+    messageServiceStub = {
+      add(message: string): void {},
+      clear(): void {}
+    };
+
     TestBed.configureTestingModule({
-      providers: [HeroService]
+      providers: [
+        HeroService,
+        {provide: MessageService, useValue: messageServiceStub }]
     });
   });
 
