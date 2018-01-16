@@ -1,10 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
+
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        MockHeroesComponent,
+        MockMessagesComponent
       ],
     }).compileComponents();
   }));
@@ -25,3 +29,20 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Hero');
   }));
 });
+
+
+@Component({
+  selector: 'app-heroes',
+  template: ''
+})
+class MockHeroesComponent {
+  @Input() hero;
+}
+
+@Component({
+  selector: 'app-messages',
+  template: ''
+})
+class MockMessagesComponent {
+  @Input() hero;
+}
