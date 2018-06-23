@@ -26,13 +26,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     // simulate server responses
     // remove when we have an actual server
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
-    ),
-    AppRoutingModule
+    )
   ],
   providers: [HeroService, MessageService],
   bootstrap: [AppComponent]
