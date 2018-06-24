@@ -11,7 +11,7 @@ describe('MessagesComponent', () => {
 
   beforeEach(async(() => {
     messageServiceStub = {
-      messages: ['hi', 'hey there!'],
+      messages: testMessages,
       add(message: string): void {},
       clear(): void {}
     };
