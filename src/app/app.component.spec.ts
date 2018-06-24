@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { Component, Input } from '@angular/core';
+import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
@@ -10,6 +10,7 @@ describe('AppComponent', () => {
         MockHeroesComponent,
         MockMessagesComponent
       ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
