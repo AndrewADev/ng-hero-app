@@ -7,9 +7,11 @@ describe('MessagesComponent', () => {
   let component: MessagesComponent;
   let fixture: ComponentFixture<MessagesComponent>;
   let messageServiceStub: {};
+  const testMessages: string[] = ['hi', 'hey there!'];
 
   beforeEach(async(() => {
     messageServiceStub = {
+      messages: ['hi', 'hey there!'],
       add(message: string): void {},
       clear(): void {}
     };
@@ -31,5 +33,11 @@ describe('MessagesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show messages', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.textContent).toContain(testMessages[0]);
+    expect(compiled.textContent).toContain(testMessages[1]);
   });
 });
