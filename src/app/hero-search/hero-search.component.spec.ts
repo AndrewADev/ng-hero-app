@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeroSearchComponent } from './hero-search.component';
+import { RouterLinkDirectiveStub } from '../../testing/router-link-directive-stub';
+import { HeroServiceStub } from '../../testing/hero-service-stub';
+import { HeroService } from '../hero.service';
 
 describe('HeroSearchComponent', () => {
   let component: HeroSearchComponent;
@@ -8,7 +11,13 @@ describe('HeroSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroSearchComponent ]
+      declarations: [
+        HeroSearchComponent,
+        RouterLinkDirectiveStub
+      ],
+      providers: [
+        {provide: HeroService, useValue: HeroServiceStub}
+      ]
     })
     .compileComponents();
   }));
