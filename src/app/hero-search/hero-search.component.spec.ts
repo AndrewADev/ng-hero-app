@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeroSearchComponent } from './hero-search.component';
-import { RouterLinkDirectiveStub } from '../../testing/router-link-directive-stub';
+import { StubRouterLinkDirective } from '../../testing/router-link-directive-stub';
 import { HeroServiceStub } from '../../testing/hero-service-stub';
 import { HeroService } from '../hero.service';
 
@@ -13,7 +13,7 @@ describe('HeroSearchComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         HeroSearchComponent,
-        RouterLinkDirectiveStub
+        StubRouterLinkDirective
       ],
       providers: [
         {provide: HeroService, useValue: HeroServiceStub}

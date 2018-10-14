@@ -5,7 +5,7 @@ import { Input, Directive } from '@angular/core';
     selector: '[routerLink]',
     host: { '(click)': 'onclick()'}
 })
-export class RouterLinkDirectiveStub {
+export class StubRouterLinkDirective {
     @Input('routerLink') linkParams: any;
     navigatedTo: any = null;
 

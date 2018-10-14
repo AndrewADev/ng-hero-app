@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, Input } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-import { RouterLinkDirectiveStub } from '../../testing/router-link-directive-stub';
+import { StubRouterLinkDirective } from '../../testing/router-link-directive-stub';
 
 import { Hero } from '../hero';
 import { HeroesComponent } from './heroes.component';
@@ -29,7 +29,7 @@ describe('HeroesComponent', () => {
       declarations: [
         HeroesComponent,
         MockHeroDetailComponent,
-        RouterLinkDirectiveStub,
+        StubRouterLinkDirective,
        ],
        providers: [
          {provide: HeroService, useValue: heroServiceStub}
@@ -43,9 +43,9 @@ describe('HeroesComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-    linkDes = fixture.debugElement.queryAll(By.directive(RouterLinkDirectiveStub));
+    linkDes = fixture.debugElement.queryAll(By.directive(StubRouterLinkDirective));
 
-    routerLinks = linkDes.map(de => de.injector.get(RouterLinkDirectiveStub));
+    routerLinks = linkDes.map(de => de.injector.get(StubRouterLinkDirective));
   });
 
   it('should create', () => {
