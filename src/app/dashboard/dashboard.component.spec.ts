@@ -2,7 +2,7 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
-import { RouterLinkDirectiveStub } from '../../testing/router-link-directive-stub';
+import { StubRouterLinkDirective } from '../../testing/router-link-directive-stub';
 import { HeroService } from '../hero.service';
 import { HeroServiceStub } from '../../testing/hero-service-stub';
 
@@ -15,7 +15,7 @@ describe('DashboardComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         DashboardComponent,
-        RouterLinkDirectiveStub
+        StubRouterLinkDirective
        ],
        providers: [{provide: HeroService, useValue: heroServiceStub}],
        schemas: [ NO_ERRORS_SCHEMA ]

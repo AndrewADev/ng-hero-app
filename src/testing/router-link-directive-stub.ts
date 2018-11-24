@@ -1,15 +1,18 @@
-import { Input, Directive } from '@angular/core';
+import { Input, Directive, HostListener } from '@angular/core';
 
 
 @Directive({
-    selector: '[routerLink]',
-    host: { '(click)': 'onclick()'}
+    // FIXME: Find correct, specific rule name to disable, or alternative
+    // it is complaining about lack of "app" prefix, but we are in fact
+    // mocking the real routerLink, so this is to be ignored in this case.
+    // tslint:disable-next-line
+    selector: '[routerLink]'
 })
-export class RouterLinkDirectiveStub {
+export class StubRouterLinkDirective {
     @Input('routerLink') linkParams: any;
     navigatedTo: any = null;
 
-    onClick() {
+    @HostListener('click') onClick() {
         this.navigatedTo = this.linkParams;
     }
 }
