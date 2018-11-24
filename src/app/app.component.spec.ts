@@ -2,6 +2,24 @@ import { TestBed, async } from '@angular/core/testing';
 import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
+
+@Component({
+  selector: 'app-heroes',
+  template: ''
+})
+class MockHeroesComponent {
+  @Input() hero;
+}
+
+@Component({
+  selector: 'app-messages',
+  template: ''
+})
+class MockMessagesComponent {
+  @Input() hero;
+}
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,19 +49,3 @@ describe('AppComponent', () => {
   }));
 });
 
-
-@Component({
-  selector: 'app-heroes',
-  template: ''
-})
-class MockHeroesComponent {
-  @Input() hero;
-}
-
-@Component({
-  selector: 'app-messages',
-  template: ''
-})
-class MockMessagesComponent {
-  @Input() hero;
-}

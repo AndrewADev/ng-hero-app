@@ -10,6 +10,14 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HeroService } from '../hero.service';
 
+@Component({
+  selector: 'app-hero-detail',
+  template: ''
+})
+class MockHeroDetailComponent {
+  @Input() hero;
+}
+
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
   let heroServiceStub: {};
@@ -52,12 +60,3 @@ describe('HeroesComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-
-@Component({
-  selector: 'app-hero-detail',
-  template: ''
-})
-class MockHeroDetailComponent {
-  @Input() hero;
-}
