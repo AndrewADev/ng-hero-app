@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-profile-preview',
   templateUrl: './profile-preview.component.html',
   styleUrls: ['./profile-preview.component.css']
 })
-export class ProfilePreviewComponent implements OnInit {
+export class ProfilePreviewComponent{
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() name: string;
+  @Input() title: string;
 
 }
