@@ -8,8 +8,8 @@
   </button>
 </div>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"> 
-    <a routerLink="/detail/{{hero.id}}">
+  <li *ngFor="let hero of heroes" id="heroSummaries"> 
+    <a routerLink="/detail/{{hero.id}}" class="heroLink">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
     <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
